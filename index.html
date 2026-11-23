@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyDock – My Work Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.dataset.theme=localStorage.getItem('mydock_theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+</head>
+<body>
+<div class="backdrop" id="backdrop"></div>
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="brand"><span class="logo" data-ic="dock"></span><span class="lbl"><b>MyDock</b><small>My Work Hub</small></span></div>
+  <nav id="nav"></nav>
+  <div class="side-bottom" id="sideBottom"></div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="icon-btn only-mobile" data-act="openMenu" aria-label="Open menu" data-ic="menu"></button>
+    <div class="gsearch">
+      <span data-ic="search"></span>
+      <input id="gs" type="search" placeholder="Search tasks, links and notes…" aria-label="Global search" autocomplete="off">
+      <div class="gres" id="gres" hidden></div>
+    </div>
+    <button class="icon-btn" data-act="theme" aria-label="Toggle theme" id="themeBtn"></button>
+  </header>
+  <main class="content">
+    <div class="page-head" id="pageHead"></div>
+    <section id="view" aria-live="polite"></section>
+  </main>
+</div>
+<dialog id="modal"></dialog>
+<div class="toasts" id="toasts" role="status"></div>
+<script src="config.js"></script>
+<script src="utils.js"></script>
+<script src="storage.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
